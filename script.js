@@ -29,7 +29,7 @@ function generateForecast() {
     forecastTitle.textContent = prediction;
     forecastProbability.textContent = `Вероятность исполнения ${probability}%`;
 
-    const card = makeCard(prediction, `Вероятность ${probability}%`)
+    const card = makeCard(prediction, probability);
     forecastContainer.prepend(card);
 
 }
@@ -39,7 +39,7 @@ function makeCard(title, probability) {
     const myCard = cardTemplate.content.cloneNode(true);
 
     myCard.querySelector('h3').textContent = title;
-    myCard.querySelector('p').textContent = probability;
+    myCard.querySelector('p').textContent = `Вероятность ${probability}%`;
 
     return myCard;
 }
