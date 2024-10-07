@@ -8,13 +8,13 @@ const prediction2 = 'У тебя появится вдохновение для 
 const prediction3 = 'Устрой себе уютный просмотр фильма или почитай интересную книгу с чашкой чая.';
 
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function generateForecast() {
     let prediction;
     const randomIndex = getRandomInt(1, 3);
-    let probability = getRandomInt(0, 100);
+    const probability = getRandomInt(0, 100);
     switch (randomIndex) {
         case 1:
             prediction = prediction1;
